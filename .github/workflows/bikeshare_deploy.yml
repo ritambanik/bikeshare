@@ -45,7 +45,9 @@ jobs:
 
       - name: Copy the wheel file to the bikeshare_api directory
         run: |
+          ls -l bikeshare_project/dist
           cp bikeshare_project/dist/*.whl bikeshare_project/bike_sharing_api
+          ls -l bikeshare_project/bike_sharing_api
 
   docker:
     runs-on: ubuntu-latest
