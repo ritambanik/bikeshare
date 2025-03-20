@@ -43,6 +43,10 @@ jobs:
           pip install --upgrade build
           python -m build bikeshare_project
 
+      - name: Copy the wheel file to the bikeshare_api directory
+        run: |
+          cp bikeshare_project/dist/*.whl bikeshare_project/bike_sharing_api
+
   docker:
     runs-on: ubuntu-latest
     needs: build
