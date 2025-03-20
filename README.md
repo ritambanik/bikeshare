@@ -13,4 +13,4 @@
 
 # Pushing an image into dockerhub
 
-``ocker push ritambanik/bikespare_api:0.0.1``
+``docker push ritambanik/bikespare_api:0.0.1``
