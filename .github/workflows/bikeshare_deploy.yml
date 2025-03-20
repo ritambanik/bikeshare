@@ -59,7 +59,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: ./bikeshare_project/bike_sharing_api
-          file: ./Dockerfile
+          file: ./bikeshare_project/bike_sharing_api/Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/bikeshare:latest
 
