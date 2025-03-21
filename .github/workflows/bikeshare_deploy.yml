@@ -81,7 +81,7 @@ jobs:
           context: ./bikeshare_project/bike_sharing_api
           file: ./bikeshare_project/bike_sharing_api/Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/bikeshare:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/bikespare_api:latest
 
 
 
