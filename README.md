@@ -14,3 +14,5 @@
 # Pushing an image into dockerhub
 
 ``docker push ritambanik/bikespare_api:0.0.1``
+
+# Test
