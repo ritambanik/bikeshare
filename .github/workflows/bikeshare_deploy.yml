@@ -15,7 +15,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: ["3.10"]
+        python-version: ["3.13"]
 
     steps:
       - uses: actions/checkout@v3
@@ -35,7 +35,7 @@ jobs:
         with:
           options: "--check --verbose"
           src: "bikeshare_project"
-          version: "~= 22.0"
+          use_pyproject: true
 
       - name: Lint with pylint
         run: |
