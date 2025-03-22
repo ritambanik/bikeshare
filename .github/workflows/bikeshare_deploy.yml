@@ -31,9 +31,9 @@ jobs:
           pip install -r bikeshare_project/requirements/test_requirements.txt
     
       - name: Format with black
-        uses: psf/black@stable
-        with:
-          options: "--check --verbose"
+        run: |
+          pip install black
+          black .
 
       - name: Lint with pylint
         run: |
