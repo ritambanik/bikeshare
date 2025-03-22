@@ -32,7 +32,8 @@ jobs:
     
       - name: Lint with pylint
         run: |
-            pylint .
+          pip install pylint
+          pylint .
     
       - name: Format with black
         run: |
