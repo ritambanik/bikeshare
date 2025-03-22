@@ -30,11 +30,11 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r bikeshare_project/requirements/test_requirements.txt
     
-      - name: Lint with black
+      - name: Format with black
         uses: psf/black@stable
         with:
           options: "--check --verbose"
-          src: "bikeshare_project"
+          src: "./bikeshare_project"
           use_pyproject: true
 
       - name: Lint with pylint
