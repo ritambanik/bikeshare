@@ -34,8 +34,6 @@ jobs:
         uses: psf/black@stable
         with:
           options: "--check --verbose"
-          src: "./bikeshare_project"
-          use_pyproject: true
 
       - name: Lint with pylint
         run: |
