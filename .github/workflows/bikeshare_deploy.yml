@@ -30,17 +30,17 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r bikeshare_project/requirements/test_requirements.txt
     
-      - name: Lint with pylint
-        run: |
-          pip install pylint
-          pylint .
-    
       - name: Lint with black
         uses: psf/black@stable
         with:
           options: "--check --verbose"
-          src: "."
+          src: "bikeshare_project"
           version: "~= 22.0"
+
+      - name: Lint with pylint
+        run: |
+          pip install pylint
+          pylint .
 
       - name: Train the bikeshare model and create the pkl file
         run: |
