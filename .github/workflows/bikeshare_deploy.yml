@@ -35,9 +35,12 @@ jobs:
           pip install pylint
           pylint .
     
-      - name: Format with black
-        run: |
-            black *.py test/*.py
+      - name: Lint with black
+        uses: psf/black@stable
+        with:
+          options: "--check --verbose"
+          src: "."
+          version: "~= 22.0"
 
       - name: Train the bikeshare model and create the pkl file
         run: |
