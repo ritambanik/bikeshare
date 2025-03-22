@@ -1,3 +1,5 @@
+# pylint: disable-all
+
 import sys
 from pathlib import Path
 file = Path(__file__).resolve()
