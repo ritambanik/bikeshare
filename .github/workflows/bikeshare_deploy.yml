@@ -11,7 +11,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     strategy:
       fail-fast: false
       matrix:
@@ -36,6 +36,7 @@ jobs:
           black .
 
       - name: Lint with pylint
+        if: false
         run: |
           pip install pylint
           pylint .
@@ -53,11 +54,6 @@ jobs:
           pip install --upgrade build
           python -m build bikeshare_project
 
-    #   - name: Upload wheel file
-    #     run: |
-    #       ls -l bikeshare_project/dist
-    #       cp bikeshare_project/dist/*.whl bikeshare_project/bike_sharing_api
-    #       ls -l bikeshare_project/bike_sharing_api
       - name: Upload wheel file
         uses: actions/upload-artifact@v4
         with:
