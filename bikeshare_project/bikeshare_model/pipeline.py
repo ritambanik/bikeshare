@@ -9,6 +9,7 @@ sys.path.append(str(root))
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import RandomForestRegressor
+from sklearn.ensemble import GradientBoostingRegressor
 
 from bikeshare_model.config.core import config
 from bikeshare_model.processing.features import WeekdayImputer, WeathersitImputer
@@ -50,7 +51,11 @@ bikeshare_pipe = Pipeline([
     ('scaler', StandardScaler()),
     
     # Regressor
-    ('model_rf', RandomForestRegressor(n_estimators = config.model_config_.n_estimators, 
+    # ('model_rf', RandomForestRegressor(n_estimators = config.model_config_.n_estimators, 
+    #                                    max_depth = config.model_config_.max_depth,
+    #                                   random_state = config.model_config_.random_state))
+    
+    ('model_rf', GradientBoostingRegressor(n_estimators = config.model_config_.n_estimators, 
                                        max_depth = config.model_config_.max_depth,
                                       random_state = config.model_config_.random_state))
     
