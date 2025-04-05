@@ -51,12 +51,12 @@ bikeshare_pipe = Pipeline([
     ('scaler', StandardScaler()),
     
     # Regressor
- ('model_rf', RandomForestRegressor(n_estimators = config.model_config_.n_estimators, 
-                                      max_depth = config.model_config_.max_depth,
-                                     random_state = config.model_config_.random_state))
-    
-    #('model_rf', GradientBoostingRegressor(n_estimators = config.model_config_.n_estimators, 
-     #                                  max_depth = config.model_config_.max_depth,
-      #                                random_state = config.model_config_.random_state))
+ #('model_rf', RandomForestRegressor(n_estimators = config.model_config_.n_estimators, 
+ #                                     max_depth = config.model_config_.max_depth,
+ #                                    random_state = config.model_config_.random_state))
+
+    ('model_rf', GradientBoostingRegressor(n_estimators = config.model_config_.n_estimators, 
+                                    max_depth = config.model_config_.max_depth,
+                                  random_state = config.model_config_.random_state))
     
     ])
