@@ -16,3 +16,6 @@
 ``docker push ritambanik/bikespare_api:0.0.1``
 
 # Test
+
+
+# Updated the workflow
