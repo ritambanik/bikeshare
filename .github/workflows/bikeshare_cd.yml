@@ -25,4 +25,4 @@ jobs:
             docker stop bike-share || true
             docker rm bike-share  || true
             docker run -d --name bike-share -p 80:8000 ${{ secrets.DOCKERHUB_USERNAME }}/bikespare_api:latest
-        '
+          '
