@@ -1,5 +1,5 @@
 
-name: Deploy Bikeshare API
+name: CI for Bikeshare API
 
 on:
   push:
@@ -88,27 +88,6 @@ jobs:
           file: ./bikeshare_project/bike_sharing_api/Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/bikespare_api:latest
-
-
-  deploy:
-    runs-on: self-hosted
-    needs: docker
-    steps:
-      - name: Install SSH key
-        run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.EC2_SSH_KEY }}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan ${{ secrets.EC2_HOST }} >> ~/.ssh/known_hosts
-
-      - name: Deploy to EC2
-        run: |
-          ssh ${{ secrets.EC2_USERNAME }}@${{ secrets.EC2_HOST }} '
-            docker pull ${{ secrets.DOCKERHUB_USERNAME }}/bikespare_api:latest
-            docker stop bike-share || true
-            docker rm bike-share  || true
-            docker run -d --name bike-share -p 80:8000 ${{ secrets.DOCKERHUB_USERNAME }}/bikespare_api:latest
-          '
 
 
     
